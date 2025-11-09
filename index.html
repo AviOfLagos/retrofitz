@@ -9,54 +9,96 @@
   <link href="https://fonts.cdnfonts.com/css/stereofidelic" rel="stylesheet">
 </head>
 <body>
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-text">
+  <div id="navbar"></div>
+
+  <section class="hero-slider">
+    <div class="slide active"><img src="images/hero-1.jpeg" alt="Slide 1"></div>
+    <div class="slide"><img src="images/hero-2.jpeg" alt="Slide 2"></div>
+    <div class="slide"><img src="images/hero-3.jpeg" alt="Slide 3"></div>
+    <div class="slider-controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+    <div class="hero-overlay">
       <h1>Bold Fits. Retro Vibes.</h1>
-      <p>Step into colour, attitude & style.</p>
+      <p>The hub for celebrities and movie stylists in Lagos.</p>
       <a href="shop.html" class="cta-btn">Shop Now</a>
     </div>
-  </header>
+  </section>
 
-  <!-- Featured Categories -->
-  <section class="categories">
-    <h2>Explore The Fits</h2>
-    <div class="category-grid">
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1589187155613-7e5ecda8d346" alt="Tops">
-        <h3>Tops</h3>
+  <!-- Promo Banner -->
+  <section class="promo-banner">
+    <p>New Arrivals – Up to 25% Off</p>
+  </section>
+
+  <!-- Featured Fits -->
+  <section class="featured-fits">
+    <h2>Featured Fits</h2>
+    <div class="fits-grid">
+      <div class="fit-card">
+        <img src="images/featured-1.jpg" alt="Fit 1">
+        <h3>Retro Denim Jacket</h3>
+        <p class="price">₦32,000</p>
+        <a href="https://wa.me/08170458811" target="_blank" class="buy-now-btn">Buy Now</a>
       </div>
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1623366375472-0d2587dcf6c5" alt="Trousers">
-        <h3>Trousers</h3>
-      </div>
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1600195077072-2eab4a25c2b1" alt="Face Caps">
-        <h3>Face Caps</h3>
-      </div>
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1627484592961-f5fef3a9d8fa" alt="Shoes">
-        <h3>Shoes</h3>
+      <div class="fit-card">
+        <img src="images/featured-2.jpg" alt="Fit 2">
+        <h3>Vivid Street Tee</h3>
+        <p class="price">₦18,500</p>
+        <a href="https://wa.me/08170458811" target="_blank" class="buy-now-btn">Buy Now</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA WhatsApp -->
-  <section class="cta-whatsapp">
-    <p>Ready to own the look? Tap a fit and Buy via WhatsApp.</p>
-    <a href="https://wa.me/08170458811" target="_blank" class="whatsapp-btn">Contact Us on WhatsApp</a>
+  <!-- Brand Story -->
+  <section class="brand-story">
+    <h2>The Hub for Culture Creators</h2>
+    <p>Celebrities, stylists, and filmmakers come to Retro Fitz to capture authentic street energy. We blend Lagos retro roots with bold modern expression.</p>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-    </ul>
-    <p>&copy; 2025 Retro Fitz</p>
-  </footer>
+  <!-- Events Carousel -->
+  <section class="events-carousel">
+    <h2>Featured Events</h2>
+    <div class="carousel-container">
+      <div class="event-slide active"><img src="images/event-1.jpg" alt="Event 1"></div>
+      <div class="event-slide"><img src="images/event-2.jpg" alt="Event 2"></div>
+      <div class="event-slide"><img src="images/event-3.jpg" alt="Event 3"></div>
+      <div class="carousel-controls">
+        <span class="prev-event">&#10094;</span>
+        <span class="next-event">&#10095;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="newsletter-overlay">
+      <h2>Join the Retro Circle</h2>
+      <p>Get exclusive invites, drops, and behind-the-scenes news.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  
+
+  <div id="footer"></div>
 
   <script src="script.js"></script>
+  <script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+    });
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+  </script>
 </body>
 </html>
