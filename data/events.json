@@ -1,0 +1,42 @@
+[
+  {
+    "id": "retro-pop-yaba-01",
+    "title": "Retro Fitz Pop-Up: Yaba Street Jam",
+    "type": "Pop-up",
+    "date": "2025-12-05T14:00:00",
+    "location": "299 Herbert Macaulay Way, Yaba, Lagos",
+    "short": "Exclusive drops, DJ sets, and retro fits IRL.",
+    "description": "Pull up for a high-energy street pop-up in Yaba. We’re dropping limited tees and throwback cuts, with live DJ sets and a quick styling corner. Expect sticker packs for early birds, photo spots for the gram, and a peek at the next capsule. Come comfortable—there’ll be on-the-spot swaps and friendly contests.",
+    "image": "images/event-1.jpg"
+  },
+  {
+    "id": "runway-eko-02",
+    "title": "Eko Night Runway x Retro Fitz",
+    "type": "Runway Show",
+    "date": "2025-12-19T19:30:00",
+    "location": "Eko Convention Centre, Victoria Island, Lagos",
+    "short": "Runway collab—bold colors, bolder fits.",
+    "description": "A nighttime runway experience celebrating Lagos creativity. We’re mixing neon palettes with retro silhouettes, styled with modern street flair. Expect a tight show flow, live visuals, and a pop-up booth after the runway to feel the fabrics and pre-order select pieces. Seating is limited—arrive early.",
+    "image": "images/event-2.jpg"
+  },
+  {
+    "id": "workshop-shoot-03",
+    "title": "Lookbook Styling Workshop",
+    "type": "Workshop",
+    "date": "2026-01-11T11:00:00",
+    "location": "Retro Fitz Studio, Surulere, Lagos",
+    "short": "Hands-on styling for lookbooks and reels.",
+    "description": "A practical, small-group workshop on building a lookbook from scratch. We’ll cover fast styling frameworks, color blocking, picking backgrounds that pop, and how to shoot a 30-second vertical reel that converts. Bring two outfits, your phone, and be ready to test ideas live with our mini set.",
+    "image": "images/event-3.jpg"
+  },
+  {
+    "id": "meet-up-ikeja-04",
+    "title": "Community Meet & Greet: Ikeja",
+    "type": "Meet & Greet",
+    "date": "2026-02-02T16:00:00",
+    "location": "Ikeja City Mall, Alausa, Lagos",
+    "short": "Chill hangout—photos, swaps & sneak peeks.",
+    "description": "A relaxed community link-up with photo ops, light swaps (clean pieces only), and a casual Q&A about upcoming drops. We’ll also share early sketches and get feedback from the tribe. Family friendly; great for connecting with other retro lovers and stylists.",
+    "image": "images/event-4.jpg"
+  }
+]

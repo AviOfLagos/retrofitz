@@ -1,58 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & Happenings - Retro Fitz | Lagos Fashion Events</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Primary Meta Tags -->
-  <title>Events & Happenings - Retro Fitz | Lagos Fashion Events</title>
-  <meta name="title" content="Events & Happenings - Retro Fitz | Lagos Fashion Events">
-  <meta name="description" content="Stay updated with Retro Fitz events, fashion shows, pop-ups, and exclusive happenings in Lagos. Join the retro street culture movement and experience bold fits in action.">
-  <meta name="keywords" content="Lagos fashion events, Retro Fitz events, streetwear pop-up Lagos, fashion shows Nigeria, retro culture events Lagos">
-  <meta name="theme-color" content="#0f0f0f">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://retrofitz.com/events.html">
-  <meta property="og:title" content="Events & Happenings - Retro Fitz">
-  <meta property="og:description" content="Stay updated with Retro Fitz events, fashion shows, and exclusive happenings in Lagos.">
-  <meta property="og:image" content="https://retrofitz.com/images/hero-1.jpeg">
+    <header class="wrap">
+      <h1 class="title">Upcoming Events</h1>
+      <p class="subtitle">
+        Catch Retro Fitz shows, pop-ups, and collabs across Lagos.
+      </p>
+    </header>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://retrofitz.com/events.html">
-  <meta name="twitter:title" content="Events & Happenings - Retro Fitz">
-  <meta name="twitter:description" content="Stay updated with Retro Fitz events, fashion shows, and exclusive happenings in Lagos.">
+    <main class="wrap">
+      <section id="eventsGrid" class="grid" aria-live="polite"></section>
+    </main>
 
-  <!-- Additional SEO -->
-  <link rel="canonical" href="https://retrofitz.com/events.html">
-  <meta name="robots" content="index, follow">
+    <!-- Modal -->
+    <div
+      id="eventModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mTitle"
+      aria-hidden="true"
+    >
+      <div class="backdrop" data-close></div>
+      <div class="modal-card">
+        <button class="close" title="Close" aria-label="Close" data-close>
+          &times;
+        </button>
+        <img id="mImage" class="modal-img" src="" alt="" />
+        <div class="modal-body">
+          <h2 id="mTitle" class="modal-title"></h2>
+          <p id="mMeta" class="muted"></p>
+          <p id="mDesc"></p>
+          <div id="mActions" style="margin-top: 12px"></div>
+        </div>
+      </div>
+    </div>
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="navbar"></div>
-  <header>
-    <h1>Events</h1>
-    <p>This page is coming soon!</p>
-    <a href="index.html">Back to Home</a>
-  </header>
-  <div id="footer"></div>
+    <!-- Footer -->
+    <div id="footer"></div>
 
-  <script src="script.js"></script>
-  <script>
-  fetch("navbar.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("navbar").innerHTML = html;
-    });
+    <script>
+      // Load partials
+      fetch("navbar.html")
+        .then((r) => r.text())
+        .then((html) => (document.getElementById("navbar").innerHTML = html));
+      fetch("footer.html")
+        .then((r) => r.text())
+        .then((html) => (document.getElementById("footer").innerHTML = html));
 
-  fetch("footer.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("footer").innerHTML = html;
-    });
-  </script>
-</body>
+      // Elements
+      const grid = document.getElementById("eventsGrid");
+      const modal = document.getElementById("eventModal");
+      const mImage = document.getElementById("mImage");
+      const mTitle = document.getElementById("mTitle");
+      const mMeta = document.getElementById("mMeta");
+      const mDesc = document.getElementById("mDesc");
+      const mActs = document.getElementById("mActions");
+
+      const fmt = (iso) => {
+        const d = new Date(iso);
+        return isNaN(d)
+          ? iso
+          : d.toLocaleString([], { dateStyle: "long", timeStyle: "short" });
+      };
+
+      function openModal(ev) {
+        mImage.src = ev.image || "images/placeholder.jpg";
+        mImage.alt = ev.title;
+        mTitle.textContent = ev.title;
+        mMeta.textContent = `${fmt(ev.date)} · ${ev.location}`;
+        mDesc.textContent = ev.description || ev.short || "";
+
+        mActs.innerHTML = ev.rsvp
+          ? `<a class="btn" target="_blank" rel="noopener" href="${ev.rsvp}">RSVP / Tickets</a>`
+          : "";
+
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      modal.addEventListener("click", (e) => {
+        if (e.target.hasAttribute("data-close") || e.target === modal)
+          closeModal();
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      function render(list) {
+        grid.innerHTML = "";
+        list.forEach((ev) => {
+          const card = document.createElement("article");
+          card.className = "card";
+          card.innerHTML = `
+          <img src="${ev.image || "images/placeholder.jpg"}" alt="${ev.title}">
+          <div class="card-body">
+            <h3 class="card-title">${ev.title}</h3>
+            <p class="meta">${fmt(ev.date)} · ${ev.location}</p>
+          </div>`;
+          card.addEventListener("click", () => openModal(ev));
+          grid.appendChild(card);
+        });
+      }
+
+      fetch("data/events.json")
+        .then((r) => r.json())
+        .then((events) => {
+          const list = (Array.isArray(events) ? events : []).sort(
+            (a, b) => new Date(a.date) - new Date(b.date)
+          );
+          render(list);
+        })
+        .catch(() => {
+          grid.innerHTML = "<p>Couldn't load events.</p>";
+        });
+    </script>
+  </body>
 </html>
