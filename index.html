@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/stereofidelic" rel="stylesheet">
+  <link rel="preload" as="image" href="images/hero-1.jpeg">
 </head>
 <body>
   <div id="navbar"></div>
@@ -18,6 +19,11 @@
     <div class="slider-controls">
       <span class="prev">&#10094;</span>
       <span class="next">&#10095;</span>
+    </div>
+    <div class="slider-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
     <div class="hero-overlay">
       <h1>Bold Fits. Retro Vibes.</h1>
@@ -34,35 +40,110 @@
   <!-- Featured Fits -->
   <section class="featured-fits">
     <h2>Featured Fits</h2>
-    <div class="fits-grid">
-      <div class="fit-card">
-        <img src="images/featured-1.jpg" alt="Fit 1">
-        <h3>Retro Denim Jacket</h3>
-        <p class="price">₦32,000</p>
-        <a href="https://wa.me/08170458811" target="_blank" class="buy-now-btn">Buy Now</a>
+    <div class="featured-carousel-container">
+      <div class="featured-carousel-track">
+        <div class="fit-card">
+          <img src="images/featured-1.jpg" alt="Retro Denim Jacket">
+          <div class="overlay-panel">
+            <h3>Retro Denim Jacket</h3>
+            <p class="price">₦32,000</p>
+            <a href="https://wa.me/+2348170458819" target="_blank" class="buy-now-btn btn-style">Buy Now</a>
+          </div>
+        </div>
+        <div class="fit-card">
+          <img src="images/featured-2.jpg" alt="Vivid Street Tee">
+          <div class="overlay-panel">
+            <h3>Vivid Street Tee</h3>
+            <p class="price">₦18,500</p>
+            <a href="https://wa.me/+2348170458819" target="_blank" class="buy-now-btn btn-style">Buy Now</a>
+          </div>
+        </div>
+        <div class="fit-card">
+          <img src="images/featured-4.jpg" alt="Trendy Baggies">
+          <div class="overlay-panel">
+            <h3>Trendy Baggies</h3>
+            <p class="price">₦45,000</p>
+            <a href="https://wa.me/+2348170458819" target="_blank" class="buy-now-btn btn-style">Buy Now</a>
+          </div>
+        </div>
+        <div class="fit-card">
+          <img src="images/featured-3.jpg" alt="Statement Footware">
+          <div class="overlay-panel">
+            <h3>Statement Footware</h3>
+            <p class="price">₦26,000</p>
+            <a href="https://wa.me/+2348170458819" target="_blank" class="buy-now-btn btn-style">Buy Now</a>
+          </div>
+        </div>
       </div>
-      <div class="fit-card">
-        <img src="images/featured-2.jpg" alt="Fit 2">
-        <h3>Vivid Street Tee</h3>
-        <p class="price">₦18,500</p>
-        <a href="https://wa.me/08170458811" target="_blank" class="buy-now-btn">Buy Now</a>
+      <div class="featured-carousel-controls">
+        <span class="prev-fit">&#10094;</span>
+        <span class="next-fit">&#10095;</span>
       </div>
     </div>
   </section>
 
+    <!-- Brand Story -->
+  <section class="brand-story2">
+    <h2>
+      <span 
+      style="font-size: 6rem; "
+      >
+      The Hub for 
+    </span>
+    <br/> Culture Creators</h2>
+    <p>Celebrities, stylists, and filmmakers come to Retro Fitz to capture authentic street energy. We blend Lagos retro roots with bold modern expression.</p>
+  </section>
+
   <!-- Brand Story -->
   <section class="brand-story">
-    <h2>The Hub for Culture Creators</h2>
-    <p>Celebrities, stylists, and filmmakers come to Retro Fitz to capture authentic street energy. We blend Lagos retro roots with bold modern expression.</p>
+    <div class="brand-story-image">
+      <img src="images/here-me-out.jpg" alt="Retro Fitz Brand Story">
+    </div>
+    <div class="brand-story-content">
+      <div > 
+        <h2>Retro Fitz is where celebrities and film stylists source iconic retro looks.</h2> 
+      </div>
+      <p>Born in Lagos, worn across screens and stages. We blend Lagos retro roots with bold modern expression.</p>
+      <a href="mailto:avi@nexprove.com" class="btn-style cta-btn">Work With Us</a>
+    </div>
   </section>
 
   <!-- Events Carousel -->
   <section class="events-carousel">
     <h2>Featured Events</h2>
     <div class="carousel-container">
-      <div class="event-slide active"><img src="images/event-1.jpg" alt="Event 1"></div>
-      <div class="event-slide"><img src="images/event-2.jpg" alt="Event 2"></div>
-      <div class="event-slide"><img src="images/event-3.jpg" alt="Event 3"></div>
+      <div class="event-slide active" data-event-id="1">
+        <img src="images/event-1.jpg" alt="Event 1">
+        <div class="event-details-overlay">
+          <h3>Lagos Fashion Week</h3>
+          <p>Date: Nov 15, 2025</p>
+          <button class="view-details-btn btn-style">View Details</button>
+        </div>
+      </div>
+      <div class="event-slide" data-event-id="2">
+        <img src="images/event-2.jpg" alt="Event 2">
+        <div class="event-details-overlay">
+          <h3>Afrobeats Music Festival</h3>
+          <p>Date: Dec 10, 2025</p>
+          <button class="view-details-btn btn-style">View Details</button>
+        </div>
+      </div>
+      <div class="event-slide" data-event-id="3">
+        <img src="images/event-3.jpg" alt="Event 3">
+        <div class="event-details-overlay">
+          <h3>Retro Street Style Meetup</h3>
+          <p>Date: Jan 20, 2026</p>
+          <button class="view-details-btn btn-style">View Details</button>
+        </div>
+      </div>
+      <div class="event-slide" data-event-id="4">
+        <img src="images/event-4.jpg" alt="Event 4">
+        <div class="event-details-overlay">
+          <h3>Vintage Market Pop-up</h3>
+          <p>Date: Feb 05, 2026</p>
+          <button class="view-details-btn btn-style">View Details</button>
+        </div>
+      </div>
       <div class="carousel-controls">
         <span class="prev-event">&#10094;</span>
         <span class="next-event">&#10095;</span>
@@ -70,19 +151,184 @@
     </div>
   </section>
 
+  <!-- Event Details Modal (Placeholder) -->
+  <div id="event-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h3 id="modal-event-title"></h3>
+      <p id="modal-event-date"></p>
+      <p id="modal-event-copy"></p>
+      <div id="modal-event-gallery"></div>
+    </div>
+  </div>
+
   <!-- Newsletter -->
-  <section class="newsletter">
-    <div class="newsletter-overlay">
-      <h2>Join the Retro Circle</h2>
-      <p>Get exclusive invites, drops, and behind-the-scenes news.</p>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
+  <section class="newsletter" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/newsletter.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color:#f6f6f6; padding:4rem 2rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:400px;">
+    <div class="newsletter-form-container" style="background-color:rgba(255,255,255,0.06); backdrop-filter:blur(10px); padding:2rem; border-radius:10px; max-width:800px; margin:0 auto;">
+      <h2 style="font-family:'Stereofidelic', sans-serif; font-size:2.5rem; margin-bottom:1rem;">Join the Retro Circle</h2>
+      <p style="font-size:1.2rem; max-width:600px; margin:0 auto 2rem;">Get exclusive invites, drops, and behind-the-scenes news.</p>
+      <form class="newsletter-form" style="display:flex; justify-content:center; gap:1rem; max-width:500px; margin:0 auto; width:100%; flex-wrap:wrap;">
+        <input type="email" placeholder="Enter your email" required style="padding:0.8rem; border:none; border-radius:5px; flex-grow:1; background-color:#f6f6f6; color:#0f0f0f; min-width:200px;">
+        <button type="submit" class="btn-style" style="padding:0.8rem 1.5rem; background-color:#00C8FF; color:#0f0f0f; border:none; border-radius:5px; cursor:pointer; font-weight:600; transition:transform 0.2s ease; text-transform:uppercase; letter-spacing:1px;">Subscribe</button>
       </form>
     </div>
   </section>
 
-  
+  <!-- Marquee Section -->
+  <section class="marquee-section">
+    <div class="marquee-content">
+      <span>Join The Circle • On-set rentals • ASAP bookings • </span>
+      <span>Recent drops • Rep the brand • VIP styling calls • </span>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-1" id="faq-header-1">
+          What is Retro Fitz?
+        </button>
+        <div class="accordion-panel" id="faq-panel-1" role="region" aria-labelledby="faq-header-1" hidden>
+          <p>Retro Fitz is an urban streetwear brand merging old-school vibes with new-age flair, specializing in expressive, cinematic looks inspired by Lagos retro street culture.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-2" id="faq-header-2">
+          How can I purchase items?
+        </button>
+        <div class="accordion-panel" id="faq-panel-2" role="region" aria-labelledby="faq-header-2" hidden>
+          <p>You can purchase items directly via WhatsApp. Simply tap on a fit you like and contact us through the provided WhatsApp button.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-3" id="faq-header-3">
+          Do you offer styling services?
+        </button>
+        <div class="accordion-panel" id="faq-panel-3" role="region" aria-labelledby="faq-header-3" hidden>
+          <p>Yes, Retro Fitz works with celebrities, movie stylists, and culture creators. You can reach out to us via the "Work With Us" button in the Brand Story section or "Get Styled" in the Navbar.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-4" id="faq-header-4">
+          What are your rental options?
+        </button>
+        <div class="accordion-panel" id="faq-panel-4" role="region" aria-labelledby="faq-header-4" hidden>
+          <p>We offer short-term outfit rentals for shoots, events, and special occasions. Rental rates start from ₦4,000/day. Contact us on WhatsApp with your rental dates and preferred items for availability.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-5" id="faq-header-5">
+          Where is Retro Fitz located?
+        </button>
+        <div class="accordion-panel" id="faq-panel-5" role="region" aria-labelledby="faq-header-5" hidden>
+          <p>Our office is located in Ikoyi, Bagada, Lagos. For in-person visits, please contact us via WhatsApp to schedule an appointment and confirm availability.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-6" id="faq-header-6">
+          Do you ship outside Lagos?
+        </button>
+        <div class="accordion-panel" id="faq-panel-6" role="region" aria-labelledby="faq-header-6" hidden>
+          <p>Yes, we can arrange shipping to other parts of Nigeria. Shipping costs and delivery times vary by location. Contact us on WhatsApp with your delivery address for a quote.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-7" id="faq-header-7">
+          How can I become a model for Retro Fitz?
+        </button>
+        <div class="accordion-panel" id="faq-panel-7" role="region" aria-labelledby="faq-header-7" hidden>
+          <p>We're always looking for fresh faces! Sign up for our talent pool by filling out the "Join Our Talent Pool" form on the homepage. We offer paid shoot sessions for selected models.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-8" id="faq-header-8">
+          What payment methods do you accept?
+        </button>
+        <div class="accordion-panel" id="faq-panel-8" role="region" aria-labelledby="faq-header-8" hidden>
+          <p>We accept bank transfers, mobile money, and cash payments. Payment details will be provided once you contact us via WhatsApp with your order.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-9" id="faq-header-9">
+          Can I return or exchange items?
+        </button>
+        <div class="accordion-panel" id="faq-panel-9" role="region" aria-labelledby="faq-header-9" hidden>
+          <p>Returns and exchanges are accepted within 7 days of purchase, provided items are unworn and in original condition with tags attached. Contact us on WhatsApp to initiate a return or exchange.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq-panel-10" id="faq-header-10">
+          How often do you release new collections?
+        </button>
+        <div class="accordion-panel" id="faq-panel-10" role="region" aria-labelledby="faq-header-10" hidden>
+          <p>We drop new collections monthly, with exclusive pieces released periodically. Subscribe to our newsletter to stay updated on new arrivals, special drops, and events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Rental Section -->
+  <section class="quick-rental-section">
+    <h2>Quick Outfit Rental</h2>
+    <p>Short-term outfit rentals for your shoots and events.</p>
+    <div class="rental-grid">
+      <div class="rental-card">
+        <img src="images/featured-1.jpg" alt="Rental Outfit 1">
+        <h3>Retro Denim Pack 6</h3>
+        <p class="rental-price">₦5,000/day</p>
+        <button class="rent-now-btn btn-style">Rent Now</button>
+      </div>
+      <div class="rental-card">
+        <img src="images/featured-2.jpg" alt="Rental Outfit 2">
+        <h3>Vivid Streetwear Pack 12</h3>
+        <p class="rental-price">₦4,000/day</p>
+        <button class="rent-now-btn btn-style">Rent Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shoot Signup Section -->
+  <section class="shoot-signup-section">
+    <h2>Join Our Talent Pool</h2>
+    <p>We're always looking for fresh faces to feature in our campaigns. Sign up for paid shoot sessions!</p>
+    <form class="shoot-signup-form">
+      <div class="form-group">
+        <label for="signup-name">Name:</label>
+        <input type="text" id="signup-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email:</label>
+        <input type="email" id="signup-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-phone">Phone:</label>
+        <input type="tel" id="signup-phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="signup-social">Top Social Platform:</label>
+        <input type="text" id="signup-social" name="top_social_platform">
+      </div>
+      <div class="form-group">
+        <label for="signup-instagram">Instagram Handle:</label>
+        <input type="text" id="signup-instagram" name="instagram_handle">
+      </div>
+      <div class="form-group">
+        <label for="signup-city">City:</label>
+        <input type="text" id="signup-city" name="city">
+      </div>
+      <div class="form-group">
+        <label for="signup-portfolio">Portfolio Link:</label>
+        <input type="url" id="signup-portfolio" name="portfolio_link">
+      </div>
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="signup-consent" name="consent" required>
+        <label for="signup-consent">I consent to Retro Fitz contacting me for shoot opportunities.</label>
+      </div>
+      <button type="submit" class="btn-style">Sign Up for Shoots</button>
+    </form>
+  </section>
 
   <div id="footer"></div>
 
